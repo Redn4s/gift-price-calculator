@@ -53,7 +53,9 @@ export const IndexPage = () => {
       <section className="pb-8 md:pb-10">
         <div className="flex flex-col items-center gap-2 md:gap-4">
           <h1 className={h1()}>Wat Geef Ik?</h1>
-          <p className={intro()}>Vind het juiste bedrag voor elk cadeau. 🎁</p>
+          <h2 className={intro()}>
+            Vind het juiste bedrag voor elk cadeau. 🎁
+          </h2>
         </div>
       </section>
 
