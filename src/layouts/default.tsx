@@ -7,7 +7,7 @@ export const DefaultLayout: FC<PropsWithChildren> = ({ children }) => {
     <div className="relative flex flex-col h-screen">
       <Navbar />
 
-      <main className="container mx-auto max-w-7xl px-6 flex-grow">
+      <main className="container mx-auto max-w-7xl px-6 py-8 flex-grow">
         {children}
       </main>
     </div>
