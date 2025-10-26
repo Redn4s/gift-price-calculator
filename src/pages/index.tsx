@@ -5,22 +5,11 @@ import { Divider } from "@heroui/divider";
 
 import { h1, intro } from "@/components/typography";
 import { DefaultLayout } from "@/layouts/default";
-import parameters from "@/data/parameters.json";
+import { PARAMETERS } from "@/data/parameters";
 
 export const IndexPage = () => {
   const baseAmount = 10;
-  const factors = parameters.factors as Record<
-    string,
-    {
-      label: string;
-      options: {
-        key: string;
-        value: string;
-        description?: string;
-        factor: number;
-      }[];
-    }
-  >;
+  const factors = PARAMETERS.factors;
 
   // Initialize state with default values (first option for each parameter)
   const [selectedValues, setSelectedValues] =
