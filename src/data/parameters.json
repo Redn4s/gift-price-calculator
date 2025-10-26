@@ -14,6 +14,11 @@
           "value": "Terugkerend",
           "description": "Bv. verjaardag, jaarlijks etentje, Kerstmis, ...",
           "factor": 0.8
+        },
+        {
+          "key": "niet_van_toepassing",
+          "value": "Niet van toepassing",
+          "factor": 1.0
         }
       ]
     },
@@ -23,37 +28,47 @@
         {
           "key": "dichte_familie",
           "value": "Dichte familie",
-          "factor": 1.0
+          "factor": 1.5
         },
         {
           "key": "verre_familie",
           "value": "Verre familie",
-          "factor": 0.8
+          "factor": 1.3
+        },
+        {
+          "key": "beste_vriend",
+          "value": "Beste vriend",
+          "factor": 1.5
         },
         {
           "key": "goede_vriend",
           "value": "Goede vriend",
-          "factor": 0.6
+          "factor": 1.1
         },
         {
           "key": "vriend",
           "value": "Vriend",
-          "factor": 0.4
+          "factor": 0.9
         },
         {
           "key": "collega",
           "value": "Collega",
-          "factor": 0.2
+          "factor": 0.8
         },
         {
           "key": "kennis",
           "value": "Kennis",
-          "factor": 0.1
+          "factor": 0.6
         },
         {
           "key": "andere",
           "value": "Andere",
-          "factor": 0.05
+          "factor": 0.5
+        },
+        {
+          "key": "niet_van_toepassing",
+          "value": "Niet van toepassing",
+          "factor": 1.0
         }
       ]
     },
@@ -77,6 +92,11 @@
           "value": "Zie je zelden",
           "description": "Bv. jaar of langer niet gezien",
           "factor": 0.8
+        },
+        {
+          "key": "niet_van_toepassing",
+          "value": "Niet van toepassing",
+          "factor": 1.0
         }
       ]
     },
@@ -84,13 +104,18 @@
       "label": "Type cadeau",
       "options": [
         {
+          "key": "gewoon_cadeau",
+          "value": "Gewoon cadeau",
+          "factor": 1.0
+        },
+        {
           "key": "klein_gebaar",
           "value": "Klein gebaar",
           "factor": 0.5
         },
         {
-          "key": "gewoon_cadeau",
-          "value": "Gewoon cadeau",
+          "key": "niet_van_toepassing",
+          "value": "Niet van toepassing",
           "factor": 1.0
         }
       ]
@@ -99,9 +124,9 @@
       "label": "Financiële draagkracht",
       "options": [
         {
-          "key": "laag",
-          "value": "Beperkt budget",
-          "factor": 0.75
+          "key": "hoog",
+          "value": "Ruim budget",
+          "factor": 1.25
         },
         {
           "key": "gemiddeld",
@@ -109,9 +134,14 @@
           "factor": 1.0
         },
         {
-          "key": "hoog",
-          "value": "Ruim budget",
-          "factor": 1.25
+          "key": "laag",
+          "value": "Beperkt budget",
+          "factor": 0.75
+        },
+        {
+          "key": "niet_van_toepassing",
+          "value": "Niet van toepassing",
+          "factor": 1.0
         }
       ]
     },
@@ -137,9 +167,9 @@
           "factor": 1.0
         },
         {
-          "key": "geen_uitnodiging",
-          "value": "Geen uitnodiging / enkel kaartje",
-          "factor": 0.5
+          "key": "niet_van_toepassing",
+          "value": "Niet van toepassing",
+          "factor": 1.0
         }
       ]
     }
