@@ -23,21 +23,16 @@ export const IndexPage = () => {
   >;
 
   // Initialize state with default values (first option for each parameter)
-  const [selectedValues, setSelectedValues] = useState<Record<string, string>>(
-    () => {
-      const initialValues: Record<string, string> = {};
-
-      Object.entries(factors).forEach(([key, value]) => {
-        initialValues[key] = value.options[0].key;
-      });
-
-      return initialValues;
-    },
-  );
+  const [selectedValues, setSelectedValues] =
+    useState<Record<string, string>>();
 
   // Calculate final amount based on selected factors
   const finalAmount = useMemo(() => {
     let totalFactor = 1;
+
+    if (!selectedValues) {
+      return baseAmount;
+    }
 
     Object.entries(selectedValues).forEach(
       ([parameterKey, selectedOptionKey]) => {
@@ -80,7 +75,7 @@ export const IndexPage = () => {
                 key={key}
                 label={value.label}
                 orientation="horizontal"
-                value={selectedValues[key]}
+                value={selectedValues?.[key] ?? undefined}
                 onValueChange={(newValue) => handleRadioChange(key, newValue)}
               >
                 {value.options.map(({ key, value, description }) => (
