@@ -40,7 +40,6 @@ export const IndexPage = () => {
     return Math.round(baseAmount * totalFactor);
   }, [selectedValues, baseAmount, factors]);
 
-  // Handle button selection changes
   const handleButtonPress = (parameterKey: string, value: string) => {
     setSelectedValues((prev) => ({
       ...prev,
