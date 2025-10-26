@@ -2,13 +2,14 @@ import { useState, useMemo } from "react";
 import { Card, CardBody, CardFooter } from "@heroui/card";
 import { Button } from "@heroui/button";
 import { Divider } from "@heroui/divider";
+import { Input } from "@heroui/input";
 
 import { h1, intro } from "@/components/typography";
 import { DefaultLayout } from "@/layouts/default";
 import { PARAMETERS } from "@/data/parameters";
 
 export const IndexPage = () => {
-  const baseAmount = 10;
+  const [baseAmount, setBaseAmount] = useState(10);
   const factors = PARAMETERS.factors;
 
   // Initialize state with default values (first option for each parameter)
@@ -59,6 +60,21 @@ export const IndexPage = () => {
       <section>
         <Card>
           <CardBody className="flex flex-col gap-8">
+            <div className="flex flex-col gap-4">
+              <h3 className="text-lg font-semibold">Basisbedrag</h3>
+              <Input
+                className="max-w-xs"
+                description="Dit is het startbedrag waar alle factoren op worden toegepast."
+                label="Basisbedrag (€)"
+                min="0"
+                placeholder="Voer een bedrag in"
+                step="1"
+                type="number"
+                value={baseAmount.toString()}
+                onChange={(e) => setBaseAmount(Number(e.target.value) || 0)}
+              />
+            </div>
+
             {Object.entries(factors).map(([key, value]) => (
               <div key={key} className="flex flex-col gap-4">
                 <h3 className="text-lg font-semibold">{value.label}</h3>
