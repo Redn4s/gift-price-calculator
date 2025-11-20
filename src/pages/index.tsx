@@ -16,6 +16,7 @@ import {
 import { h1, intro } from "@/components/typography";
 import { DefaultLayout } from "@/layouts/default";
 import { PARAMETERS } from "@/data/parameters";
+import { saveConfiguration } from "@/utils/storage";
 
 export const IndexPage = () => {
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
@@ -61,10 +62,15 @@ export const IndexPage = () => {
   };
 
   const onPressSave = () => {
-    console.log({
-      name,
+    if (!name.trim()) {
+      return;
+    }
+
+    saveConfiguration({
+      name: name.trim(),
       baseAmount,
-      ...selectedValues,
+      selectedValues: selectedValues || {},
+      finalAmount,
     });
 
     setName("");
@@ -127,7 +133,7 @@ export const IndexPage = () => {
               <div className="flex flex-col gap-4">
                 <h3 className="text-lg font-semibold">Basisbedrag</h3>
                 <Input
-                  className="max-w-xs"
+                  className="w-full"
                   description="Dit is het startbedrag waar alle factoren op worden toegepast."
                   label="Basisbedrag (€)"
                   min="0"

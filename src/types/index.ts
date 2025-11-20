@@ -13,3 +13,12 @@ export interface IParameterOption {
   description?: string;
   factor: number;
 }
+
+export interface SavedConfiguration {
+  id: string;
+  name: string;
+  baseAmount: number;
+  selectedValues: Record<string, string>;
+  finalAmount: number;
+  createdAt: string;
+}
